@@ -1,0 +1,56 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Listar Produtor</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Lista de todos os produtores
+            </div>
+
+            <div class="panel-body" ng-controller="ControllerProdutor">
+
+                 <form role="form" name = "form_cad_produtor">
+                
+                    <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Filtro</label>
+                                <input class="form-control" ng-model="filtroProdutor"  type="text" placeholder=" Digite alguma coisa para iniciar o filtro !">
+                               
+                            </div>
+                        
+                         </div>
+                    </div>
+                    </form>
+
+                <div class="scrollTable">
+
+                    <table class="table" ng-table="tableParams" show-filter="false">
+                        <tr ng-repeat="produtor in listaProdutor | filter: filtroProdutor">
+                            <td title="'Código'" filter="{ Id: 'number'}" sortable="'Id'">
+                                {{produtor.Id}}</td>
+                            <td title="'Nome Produtor'" filter="{ name: 'text'}" sortable="'name'">
+                                {{produtor.name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+</div>

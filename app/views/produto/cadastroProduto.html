@@ -1,0 +1,174 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Cadastro Produto</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Cadastro de um novo produto
+            </div>
+            <div class="panel-body" ng-controller="ControllerProduto">
+
+
+
+             <form role="form" name = "form_cad_produtor">
+                 
+                    <div class="alert alert-success" id="success-alert" >
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>Produto cadastrado com sucesso !!!</strong> 
+                    </div>
+                            
+                	<div class="row">
+                    	<div class="col-lg-2">
+                        
+                            <div class="form-group">
+                                <label>Código Produto</label>
+                                <input class="form-control" ng-model="produto.id" ng-disabled="true" type="number">
+                               
+                            </div>
+                        
+                      	 </div>
+                    </div>
+                     <div class="row">
+                    	<div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Descrição do Produto</label>
+                                <input class="form-control" ng-model="produto.descricao" id="descricao" 
+                                    type="text" required autofocus maxlength="24">
+                               
+                            </div>
+                      	</div>
+                    </div>
+                     <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>BRIX (teor de açucar)</label>
+                                <input class="form-control" ng-model="produto.brix" id="brix" 
+                                    type="number" required >
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>GLP</label>
+                                <input class="form-control" ng-model="produto.glp" id="gpl" 
+                                    type="number"  required >
+                               
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Tambor</label>
+                                <input class="form-control" ng-model="produto.tambor" id="tambor" 
+                                    type="text" maxlength="5" required >
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Temperatura Armazenagem</label>
+                                <input class="form-control" ng-model="produto.temperatura" id="gpl" 
+                                    type="number" required >
+                               
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div class="row">
+                                            
+                        <fieldset>
+
+                                <legend style="width: 96%; margin-left : 12px;">Configuração Peso (kg)</legend>
+                            <div class="col-lg-4">
+                            
+                                <div class="form-group">
+                                    <label>Peso Bruto</label>
+                                    <input class="form-control" ng-model="produto.pesoBruto" id="pesoBruto" ng-change="produto.pesoBrutolb = produto.pesoBruto * 2.20462"
+                                        type="number" required >
+                                   
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                            
+                                <div class="form-group">
+                                    <label>Peso Líquido</label>
+                                    <input class="form-control" ng-model="produto.pesoLiquido" id="pesoLiquido"  ng-change="produto.pesoLiquidolb = produto.pesoLiquido * 2.20462"
+                                        type="number" required >
+                                   
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                       <div class="row">
+                                            
+                        <fieldset>
+
+                                <legend style="width: 96%; margin-left : 12px;">Configuração Peso (lb)</legend>
+                            <div class="col-lg-4">
+                            
+                                <div class="form-group">
+                                    <label>Peso Bruto</label>
+                                    <input class="form-control" ng-model="produto.pesoBrutolb" id="pesoBrutoLb" ng-disabled="true"
+                                        type="text" >
+                                   
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                            
+                                <div class="form-group">
+                                    <label>Peso Líquido</label>
+                                    <input class="form-control" ng-model="produto.pesoLiquidolb" id="pesoLiquidoLb" ng-disabled="true"
+                                        type="text" >
+                                   
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="row">
+                    	<div class="col-lg-4">
+
+                   			 <p>
+                               
+                                <button type="button" class="btn btn-outline btn-primary btn-lg btn-block"  ng-disabled="form_cad_produtor.$invalid"
+                                    ng-click="cadastrarProduto(produto)">Cadastrar Produto</button>
+                            </p>
+                         </div>
+                    </div>
+
+                    {{}}
+                 
+                </div>
+                <!-- /.row (nested) -->
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+</div>

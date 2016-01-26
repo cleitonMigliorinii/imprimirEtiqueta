@@ -1,0 +1,237 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Gerar Etiqueta</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Gerar etiquetas
+            </div>
+            <div class="panel-body" ng-controller="ControllerEtiqueta">
+
+             <form role="form" name = "form_cad_produtor">
+                 
+                    <div class="alert alert-success" id="success-alert" >
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>Produto cadastrado com sucesso !!!</strong> 
+                    </div>
+                            
+                	<div class="row">
+                        <div class="col-lg-4">
+
+                        <label>Informe o Produtor</label>
+                            <div class="form-group input-group">
+
+                                <input type="text" class="form-control" ng-model="produtorSelecionado" ng-disabled="true">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalProdutor"><i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div> 
+                        </div> 
+                    </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalProdutor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Selecione o produtor</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+
+                                                    <label>Informe o Produtor</label>
+                                                    <div class="form-group input-group">
+
+                                                        <input type="text" class="form-control" ng-model = "filtroProdutor">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button" disabled="true"><i class="fa fa-search"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div> 
+                                                </div> 
+                                            </div>
+
+
+                                            <div class="scrollTable">
+
+                                                <table class="table" ng-table="tableParams" show-filter="false">
+                                                    <tr ng-repeat="produtor in listaProdutor | filter: filtroProdutor">
+                                                        <td title="'Código'" filter="{ Id: 'number'}" sortable="'Id'">
+                                                            {{produtor.Id}}</td>
+                                                        <td title="'Nome Produtor'" filter="{ name: 'text'}" sortable="'name'">
+                                                            {{produtor.name}}</td>
+                                                        <td title="'Ação'">
+                                                            <button class="btn btn-default" type="button" ng-click="selecionarProdutor(produtor)" data-dismiss="modal"><i class="fa fa-check"></i>
+                                                            </button>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                        <label>Informe o Produto</label>
+                            <div class="form-group input-group">
+
+                                <input type="text" class="form-control" ng-model="produtoSelecionado" ng-disabled="true" >
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modalProduto"><i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div> 
+                        </div> 
+                    </div>
+
+                      <!-- Modal -->
+                            <div class="modal fade" id="modalProduto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Selecione o produto</h4>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-lg-12">
+
+                                                    <label>Informe o Produto</label>
+                                                    <div class="form-group input-group">
+
+                                                        <input type="text" class="form-control" ng-model = "filtroProduto">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button" disabled="true"><i class="fa fa-search"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div> 
+                                                </div> 
+                                            </div>
+
+                                            <div class="scrollTable">
+
+                                                <table class="table" ng-table="tableParams" show-filter="false">
+                                                    <tr ng-repeat="produto in listaProduto | filter: filtroProduto">
+                                                        <td title="'Código'" filter="{ Id: 'number'}" sortable="'Id'">
+                                                            {{produto.Id}}</td>
+                                                        <td title="'Descrição Produto'" filter="{ name: 'text'}" sortable="'name'">
+                                                            {{produto.descricao}}</td>
+                                                        <td title="'Ação'">
+                                                            <button class="btn btn-default" type="button" ng-click="selecionarProduto(produto)" data-dismiss="modal"><i class="fa fa-check"></i>
+                                                            </button>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+
+                     <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Lote Produto</label>
+                                <input class="form-control" ng-model="etiqueta.loteProduto" id="lote" maxlength="10" 
+                                    type="text"  >
+                               
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div class="row">
+                                            
+                        <fieldset>
+
+                                <legend style="width: 96%; margin-left : 12px;">Datas do Lote</legend>
+                     
+                                <div class="col-lg-4">
+                                
+                                    <div class="form-group">
+                                        <label>Data Validade</label>
+                                        <input class="form-control" ng-model="etiqueta.dataValidade" id="dataValidade" 
+                                            type="date"  >
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                            
+                                    <div class="form-group">
+                                        <label>Data Fabricação</label>
+                                        <input class="form-control" ng-model="etiqueta.dataFabricacao" id="dataFabricacao" 
+                                            type="date"  >
+                                       
+                                    </div>
+                                </div>
+                          
+                    
+            
+                        </fieldset>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Quantidade Cópias</label>
+                                <input class="form-control" ng-model="etiqueta.qtddCopias" id="brix" 
+                                    type="number"  >
+                               
+                            </div>
+                        </div>
+                    </div>
+                 
+
+                    <div class="row">
+                    	<div class="col-lg-4">
+
+                   			 <p>
+                               
+                                <button type="button" class="btn btn-outline btn-primary btn-lg btn-block"  ng-disabled="form_cad_produtor.$invalid"
+                                    ng-click="gerarEtiqueta()">Gerar Etiqueta</button>
+                            </p>
+                         </div>
+                    </div>
+
+                    {{}}
+                 
+                </div>
+                <!-- /.row (nested) -->
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+</div>

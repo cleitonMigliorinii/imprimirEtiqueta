@@ -1,0 +1,77 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Cadastro Produtor</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Cadastro de um Novo Produtor
+            </div>
+            <div class="panel-body" ng-controller="ControllerProdutor">
+
+
+
+             <form role="form" name = "form_cad_produtor">
+                 
+                    <div class="alert alert-success" id="success-alert" >
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>Cadastro Efetuado com sucesso !!!</strong> 
+                    </div>
+                            
+                	<div class="row">
+                    	<div class="col-lg-2">
+                        
+                            <div class="form-group">
+                                <label>Código Produtor</label>
+                                <input class="form-control" ng-model="produtor.id" ng-disabled="true" type="number">
+                               
+                            </div>
+                        
+                      	 </div>
+                    </div>
+                     <div class="row">
+                    	<div class="col-lg-4">
+                        
+                            <div class="form-group">
+                                <label>Nome do Produtor</label>
+                                <input class="form-control" ng-model="produtor.name" id="nomeProduto" 
+                                    type="text" required autofocus>
+                               
+                            </div>
+                      	</div>
+                    </div>
+
+                    <div class="row">
+                    	<div class="col-lg-4">
+
+                   			 <p>
+                               
+                                <button type="button" class="btn btn-outline btn-primary btn-lg btn-block"  ng-disabled="form_cad_produtor.$invalid"
+                                    ng-click="cadastrarProdutor(produtor)">Cadastrar Produtor</button>
+                            </p>
+                         </div>
+                    </div>
+
+                    {{}}
+                 
+                </div>
+                <!-- /.row (nested) -->
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+</div>
