@@ -127,12 +127,15 @@ angular.module('sbAdminApp',['firebase'])
 
 			var i;
 
-			for (i = 0; i <= $scope.etiqueta.qtddCopias; i++) {
-		
+			for (i = 0; i < $scope.etiqueta.qtddCopias; i++) {
+
+							var dataFab = $scope.etiqueta.dataFabricacao.split("-");
+							var dataVal = $scope.etiqueta.dataValidade.split("-");
+
+							console.log()
+
 							doc.setLineWidth(0.03);
-							doc
-									.rect(0.1, 0.15,
-											7.3, 1);
+							doc.rect(0.1, 0.1,7.3, 1);
 							
 							doc.setTextColor(0);
 							doc.setFontSize(9);							
@@ -142,121 +145,121 @@ angular.module('sbAdminApp',['firebase'])
 							doc.setFont("arial");
 							doc.text(0.2,1,$scope.etiqueta.produto.descricao.toUpperCase().toString());
 							doc.setLineWidth(0.03);
-							doc.rect(7.4, 0.15,3.0, 1);
+							doc.rect(7.4, 0.1,3.0, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
 							doc.text(7.5,0.5,"Lote");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(7.5,1,$scope.etiqueta.loteProduto.toUpperCase().toString());
-							doc.rect(0.1,1.15,2, 1);
+							doc.rect(0.1,1.1,2, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
 							doc.text(0.2,1.45,"Cod. Produto");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(0.2,2,$scope.etiqueta.produto.Id.toString());
-							doc.rect(2.1,1.15,2, 1);
+							doc.rect(2.1,1.1,2, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
 							doc.text(2.2,1.45,"Produtor");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(2.2,2,$scope.etiqueta.produtor.Id.toString());
-							doc.rect(4.1,1.15,3.3, 1);
+							doc.rect(4.1,1.1,3.3, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
 							doc.text(4.2,1.45,"Data Validade");
 							doc.setFontSize(14);
 							doc.setFont("arial");
-							doc.text(4.2,2,$scope.etiqueta.dataValidade);
-							doc.rect(7.4,1.15,3, 1);
+							doc.text(4.2,2,dataVal[1] + "/" + dataVal[0]);
+							doc.rect(7.4,1.1,3, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
 							doc.text(7.5,1.45,"Data Fabricação");
 							doc.setFontSize(14);
 							doc.setFont("arial");
-							doc.text(7.5,2,$scope.etiqueta.dataValidade);
-							doc.rect(0.1,2.15,2, 1);
+							doc.text(7.5,2,dataFab[1] + "/" + dataFab[0]);
+							doc.rect(0.1,2.1,2, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
-							doc.text(0.2,2.45,"BRIX");
+							doc.text(0.2,2.4,"BRIX");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(0.2,3,$scope.etiqueta.produto.brix.toString());
-							doc.rect(2.1,2.15,2, 1);
+							doc.rect(2.1,2.1,2, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
-							doc.text(2.2,2.45,"GLP");
+							doc.text(2.2,2.4,"GLP");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(2.2,3,$scope.etiqueta.produto.glp.toString());
-							doc.rect(4.1,2.15,2, 1);
+							doc.rect(4.1,2.1,2, 1);
 							doc.setFontSize(9);							
 							doc.setFont("arial");
-							doc.text(4.2,2.45,"Tambor");
+							doc.text(4.2,2.4,"Tambor");
 							doc.setFontSize(14);
 							doc.setFont("arial");
 							doc.text(4.2,3, i + 1 +"/" + $scope.etiqueta.qtddCopias.toString());
-							doc.rect(6.1,2.15,4.3, 1);
+							doc.rect(6.1,2.1,4.3, 1);
 							doc.setFontSize(13);
 							doc.setFont("arial");
 							doc.text(6.3,2.8,'Fabricado no Brasil');
-							doc.rect(0.1,3.15,5.2, 0.6);
+							doc.rect(0.1,3.1,5.2, 0.6);
 							doc.setFontSize(10);							
 							doc.setFont("arial");
 							doc.text(2.0,3.53,"Peso (kg)");
-							doc.rect(5.3,3.15,5.1, 0.6);
+							doc.rect(5.3,3.1,5.1, 0.6);
 							doc.setFontSize(10);							
 							doc.setFont("arial");
 							doc.text(7,3.53,"Peso (lb)");
-							doc.rect(0.1,3.75,2.6, 1.45);
+							doc.rect(0.1,3.7,2.6, 1.45);
 							doc.setFontSize(11);							
 							doc.setFont("arial");
 							doc.text(0.2,4.1,"Bruto");
 							doc.setFontSize(17);
 							doc.setFont("arial");
 							doc.text(0.7,4.9,$scope.etiqueta.produto.pesoBruto.toString());
-							doc.rect(0.1,3.75,5.2, 1.45);
+							doc.rect(0.1,3.7,5.2, 1.45);
 							doc.setFontSize(11);							
 							doc.setFont("arial");
 							doc.text(2.8,4.1,"Líquido");
 							doc.setFontSize(17);
 							doc.setFont("arial");
 							doc.text(3.5,4.9,$scope.etiqueta.produto.pesoLiquido.toString());
-							doc.rect(0.1,3.75,7.8, 1.45);
+							doc.rect(0.1,3.7,7.8, 1.45);
 							doc.setFontSize(11);							
 							doc.setFont("arial");
 							doc.text(5.4,4.1,"Bruto");
 							doc.setFontSize(17);
 							doc.setFont("arial");
 							doc.text(6.1,4.9,parseInt($scope.etiqueta.produto.pesoBrutolb).toString());
-							doc.rect(0.1,3.75,10.3, 1.45);
+							doc.rect(0.1,3.7,10.3, 1.45);
 							doc.setFontSize(11);							
 							doc.setFont("arial");
 							doc.text(8.2,4.1,"Líquido");
 							doc.setFontSize(17);
 							doc.setFont("arial");
 							doc.text(8.7,4.9,parseInt($scope.etiqueta.produto.pesoLiquidolb).toString());
-							doc.rect(0.1,5.2,7.6, 2.27);
+							doc.rect(0.1,5.15,7.6, 2.27);
 							doc.setFontSize(7);							
 							doc.setFont("arial");
-							doc.text(0.2,5.5,"EQUILIBRE INDÚSTRIA E COMERCIO DE ALIMENTOS LTDA-ME");
+							doc.text(0.2,5.4,"EQUILIBRE INDÚSTRIA E COMERCIO DE ALIMENTOS LTDA-ME");
 							doc.setFontSize(7);							
 							doc.setFont("arial");
-							doc.text(0.7,5.8,"ESTRADA TAIAÇU X VISTA ALEGRE DO ALTO, KM 1,2");
-							doc.text(1.3,6.1,"BAIRRO: ZONA RURAL - SITIO STA CANDIDA");
-							doc.text(2,6.4,"TAIAÇU - SP   CEP: 14.725-000");
-							doc.text(2.3,6.7,"CNPJ: 07.433.602/0001-81");	
-							doc.text(2.5,7,"FONE: (16) 3972-2420 ");	
+							doc.text(0.7,5.7,"ESTRADA TAIAÇU X VISTA ALEGRE DO ALTO, KM 1,2");
+							doc.text(1.3,6,"BAIRRO: ZONA RURAL - SITIO STA CANDIDA");
+							doc.text(2,6.3,"TAIAÇU - SP   CEP: 14.725-000");
+							doc.text(2.3,6.6,"CNPJ: 07.433.602/0001-81");	
+							doc.text(2.5,6.9,"FONE: (16) 3972-2420 ");	
 
-							var qrCodeImg = create_qrcode("Cleiton");
+							var qrCodeImg = create_qrcode($scope.etiqueta.produto.descricao.toUpperCase().toString() + " / TAMBOR  - " + i + 1 +"/" + $scope.etiqueta.qtddCopias.toString());
 
 							doc.setLineWidth(0.03);
-							doc.rect(7.7, 5.2, 2.7,
+							doc.rect(7.7, 5.15, 2.7,
 									2.27);
 							doc.addImage(qrCodeImg,
-									'JPEG', 8, 5.3,
+									'JPEG', 8, 5.2,
 									2.1, 2.1);
 				
 
