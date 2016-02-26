@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/start-angular/sb-admin-angular"
+    "url": "https://github.com/cleitonMigliorinii/imprimirEtiqueta"
   },
   "dependencies": {
     "bower": "1.7.4",
@@ -15,6 +15,8 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
+    "prestart": "npm install",
+    "start": "node server.js",
     "dist": "grunt serve:dist",
     "postinstall": "bower install"
   }
