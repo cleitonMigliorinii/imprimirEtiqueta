@@ -13,8 +13,6 @@
      "node": "5.5.0"
   },
   "scripts": {
-    "test": "grunt test",
-    "start": "grunt serve",
     "prestart": "npm install",
     "start": "node server.js",
     "dist": "grunt serve:dist",
