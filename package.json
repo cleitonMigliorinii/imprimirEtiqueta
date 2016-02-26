@@ -6,7 +6,7 @@
     "url": "https://github.com/cleitonMigliorinii/imprimirEtiqueta"
   },
   "dependencies": {
-    "bower": "1.7.4",
+    "bower": "1.7.7",
     "express": "~4.9.8"
   },
    "engines": {
